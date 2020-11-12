@@ -6,15 +6,34 @@
   "repository": "https://github.com/ingkellswith/GuessMind",
   "author": "ingkellswith <allover3773@gmail.com>",
   "license": "MIT",
+  "browserslist":"last 2 versions",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/node": "^7.12.6",
     "@babel/preset-env": "^7.12.1",
+    "@babel/register": "^7.12.1",
+    "babelify": "^10.0.0",
+    "del": "^6.0.0",
+    "eslint": "^7.13.0",
     "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-csso": "^4.0.1",
+    "gulp-sass": "^4.1.0",
+    "morgan": "^1.10.0",
+    "node-sass": "^5.0.0",
     "nodemon": "^2.0.6",
+    "pug": "^3.0.0",
     "socket.io": "^3.0.1"
   },
   "scripts": {
-    "dev:server": "nodemon --exec babel-node src/server"
+    "dev:server": "nodemon --exec babel-node src/server --ignore assets/ --ignore src/static",
+    "dev:assets": "gulp"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.2"
   }
 }
