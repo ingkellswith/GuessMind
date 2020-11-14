@@ -22,16 +22,11 @@ const handleListening = () =>
 const server = app.listen(PORT, handleListening);
 
 const io = socketIO(server);
-io.on("connection", (socket) => socketController(socket));
+io.on("connection", (socket) => socketController(socket, io));
 //io는 서버라고 생각하면 됨(이름 상관 없음)
+//socket은 연결되어 있는 소켓들을 의미
 
 //let sockets = [];
 //io.on("connection", (socket) => sockets.push(socket.id));
 //socket은 request객체라고 함
 //setInterval(() => console.log(sockets), 1000);
-
-/*const {
-    user: { _id: id },
-    body: { name, email },
-    file,
-  } = req;위 message는 여기에서 req.body가 없는  name,email이 작동하는 방식과 같다.*/

@@ -17,3 +17,6 @@ export function handleMessageNotif(data) {
 socket.on("messageNotif", handleMessageNotif);*/
 
 import "./login";
+import "./sockets";
+import "./chat";
+import "./paint";

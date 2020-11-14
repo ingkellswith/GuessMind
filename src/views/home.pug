@@ -11,8 +11,30 @@ html(lang="en")
             form#jsLogin
                 input(placeholder="Whats your nickname", type="text")
         .gameContainer#jsGame
-            h1 You are logged in
+            .main
+                #clock
+                #jsNotifs
+                canvas.canvas#jsCanvas
+                .controls#jsControls
+                    button#jsMode Fill
+                    .colors
+                        .color.jsColor(style="background-color:rgb(0, 0, 0)")
+                        .color.jsColor(style="background-color:rgb(255,255,255)")
+                        .color.jsColor(style="background-color:rgb(255,59,48)")
+                        .color.jsColor(style="background-color:rgb(255,149,0)")
+                        .color.jsColor(style="background-color:rgb(255,204,0)")
+                        .color.jsColor(style="background-color:rgb(76,217,100)")
+                        .color.jsColor(style="background-color:rgb(90,200,250)")
+                        .color.jsColor(style="background-color:rgb(0,122,255)")
+                        .color.jsColor(style="background-color:rgb(88,86,214)")
+            .chat
+                .player__board#jsPBoard
+                ul.chat__messages#jsMessages
+                form.chat__form#jsSendMsg
+                    input(placeholder="Write a message", type="text")
         script.
             window.events = !{events}//-script.아래에 window.events=는 js코드고 !{events}는 pug코드이다.
         script(src="/socket.io/socket.io.js")
         script(src="/js/main.js")
+
+        

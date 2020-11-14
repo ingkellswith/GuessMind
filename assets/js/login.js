@@ -1,3 +1,5 @@
+import { initSockets } from "./sockets";
+
 const body = document.querySelector("body");
 const loginForm = document.getElementById("jsLogin");
 
@@ -10,9 +12,14 @@ const nickname = localStorage.getItem(NICKNAME);
 const logIn = (nickname) => {
   //const socket = io("/");
   //socket.emit("setNickname", { nickname });
+
+  //window.socket = io("/"); //window.socket은 클라이언트의 전역 변수, io는 따로 import하지 않음
+  //window.socket.emit(window.events.setNickname, { nickname });
+
   // eslint-disable-next-line no-undef
-  window.socket = io("/"); //window.socket은 클라이언트의 전역 변수, io는 따로 import하지 않음
-  window.socket.emit(window.events.setNickname, { nickname });
+  const socket = io("/");
+  socket.emit(window.events.setNickname, { nickname });
+  initSockets(socket);
 };
 
 if (nickname === null) {
