@@ -11,7 +11,8 @@ app.set("view engine", "pug");
 app.set("views", join(__dirname, "views"));
 app.use(logger("dev"));
 app.use("/", express.static(join(__dirname, "static")));
-//https://stackoverflow.com/questions/53002671/what-is-express-static-in-express참고
+//https://stackoverflow.com/questions/53002671/what-is-express-static-in-express
+//참고
 app.get("/", (req, res) =>
   res.render("home", { events: JSON.stringify(events) })
 );
